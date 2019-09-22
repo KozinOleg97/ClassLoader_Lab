@@ -1,20 +1,29 @@
 public class ClassChecker {
 
     //private  Class curClass;
-    private Class[] curInterfaces;
+    //private Class[] curInterfaces;
 
-    public void check (Class curClass, Printer printer){
+    public void checkParentClasses (Class curClass, Printer printer){
 
         printer.addtoStrLn(curClass.getName());
-
-        curInterfaces = curClass.getInterfaces();
         curClass = curClass.getSuperclass();
 
         if (curClass!= null){
-            check(curClass, printer);
+            checkParentClasses(curClass, printer);
         }
+    }
 
+    public void checkParentInterfaces(Class originClass, Printer printer, int lvl ){
 
+        Class [] curInterfaces = originClass.getInterfaces();
+
+        if (curInterfaces.length!=0){
+            for (Class curInt : curInterfaces) {
+             checkParentInterfaces(curInt, printer,lvl+1);
+            }
+            printer.addToTree(lvl);
+        }
+        printer.addToTree(originClass.getName(), lvl);
 
     }
 

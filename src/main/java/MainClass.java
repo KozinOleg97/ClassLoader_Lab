@@ -1,6 +1,7 @@
+import java.awt.*;
 import java.lang.reflect.MalformedParameterizedTypeException;
 
-public class MainClass implements Itest{
+public class MainClass implements Itest, iTest2{
 
 
     public static void main(String[] args){
@@ -11,14 +12,18 @@ public class MainClass implements Itest{
 
         ClassChecker classChecker = new ClassChecker();
 
-        classChecker.check(MainClass.class, printer);
-        printer.clear();
-        classChecker.check(MalformedParameterizedTypeException.class, printer);
-
-        //printer.addtoStr(mainClass.getClass().toString());
 
 
+        classChecker.checkParentClasses(MainClass.class, printer);
         printer.print();
+        printer.clear();
+        classChecker.checkParentInterfaces(MainClass.class, printer,0);
+        printer.print();
+        printer.clear();
+
+
+
+
     }
 
 
