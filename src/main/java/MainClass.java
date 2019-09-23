@@ -15,7 +15,7 @@ public class MainClass implements Itest, iTest2{
 
 
 
-        classChecker.check(SortedSet.class, printer);
+        classChecker.check(Printer.class, printer);
         printer.print();
         printer.clear();
 

@@ -1,3 +1,6 @@
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
 public class ClassChecker {
 
     //private  Class curClass;
@@ -10,7 +13,21 @@ public class ClassChecker {
 
     private void checkParentClasses (Class curClass, Printer printer){
 
-        printer.addtoStrLn(curClass.getName());
+        printer.addtoStr(curClass.getName());
+
+
+
+        for (Field f: curClass.getDeclaredFields() ) {
+            printer.addtoStr(" (f)" + f.getName());
+        }
+
+        for (Method m: curClass.getDeclaredMethods()) {
+            printer.addtoStr(" (m)" + m.getName());
+        }
+
+
+        printer.addtoStrLn("");
+
         curClass = curClass.getSuperclass();
 
         if (curClass!= null){
