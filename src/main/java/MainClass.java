@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.lang.reflect.MalformedParameterizedTypeException;
+import java.util.SortedSet;
 
 public class MainClass implements Itest, iTest2{
 
@@ -14,10 +15,7 @@ public class MainClass implements Itest, iTest2{
 
 
 
-        classChecker.checkParentClasses(MainClass.class, printer);
-        printer.print();
-        printer.clear();
-        classChecker.checkParentInterfaces(MainClass.class, printer,0);
+        classChecker.check(SortedSet.class, printer);
         printer.print();
         printer.clear();
 

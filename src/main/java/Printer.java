@@ -3,47 +3,50 @@ import java.util.ArrayList;
 public class Printer {
 
     private StringBuilder str;
-    private ArrayList<String> tree;
+    private StringBuilder tree;
 
-    Printer (){
+    Printer() {
         str = new StringBuilder("");
-        tree = new ArrayList<String>();
+        tree = new StringBuilder("");
     }
 
-    public String getStr(){
+    public String getStr() {
         return str.toString();
     }
 
-    public void print(){
+    public void print() {
         System.out.println(str);
+        System.out.println("--------------------------------------");
+        System.out.println(tree);
     }
 
-    public void clear(){
+    public void clear() {
         str.setLength(0);
+        tree.setLength(0);
     }
 
-    public void addtoStrLn(String inputStr){
-        str.append(inputStr+"\n");
+    public void addtoStrLn(String inputStr) {
+        str.append(inputStr + "\n");
     }
 
-    public void addtoStr(String inputStr){
-        str.append(inputStr+"   ");
+    public void addtoStr(String inputStr) {
+        str.append(inputStr + "   ");
     }
 
-    public void addToTree(String inputStr, int lvl){
-        if (lvl+1 > tree.size()){
-            int a = lvl-tree.size()+1;
-            for (int i = 0; i < a; i++){
-                tree.add("");
+    public void addToTree(String inputStr, int lvl) {
+
+        if (lvl != 0) {
+            for (int i = 0; i < lvl - 1; i++) {
+                tree.append("   ");
             }
+            tree.append("|--");
         }
-        tree.set(lvl, tree.get(lvl) + "  " + inputStr);
+
+
+        tree.append(inputStr + "\n");
 
 
     }
 
-    public void addToTree(int lvl){
-        tree.set(lvl, tree.get(lvl) + "     " );
-    }
 
 }
