@@ -1,12 +1,29 @@
 import java.awt.*;
 import java.lang.reflect.MalformedParameterizedTypeException;
 import java.lang.reflect.Method;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.SortedSet;
 
 public class MainClass implements Itest, iTest2{
 
 
     public static void main(String[] args){
+
+        ////////////////////////////Const MAP////////////////////////////////////////////
+        final Map<String, String> map = new HashMap<String, String>(){{
+            put("Key_1", "Value_1");
+            put("Key_2", "Value_2");
+            put("Key_3", "Value_1");
+        }};
+
+        map.put("d","d");
+
+        final Map constMap = Collections.unmodifiableMap(map);
+
+        constMap.put("d", "d");
+        /////////////////////////////////////////////////////////////////////////////////
 
         Printer printer = new Printer();
 
