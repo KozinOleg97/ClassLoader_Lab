@@ -1,8 +1,11 @@
 import java.awt.*;
 import java.lang.reflect.MalformedParameterizedTypeException;
 import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.SortedSet;
 
@@ -22,7 +25,11 @@ public class MainClass implements Itest, iTest2{
 
         final Map constMap = Collections.unmodifiableMap(map);
 
-        constMap.put("d", "d");
+        try {
+            constMap.put("d", "d");
+        } catch (Exception e) {
+            //e.printStackTrace();
+        }
         /////////////////////////////////////////////////////////////////////////////////
 
         Printer printer = new Printer();
@@ -33,7 +40,7 @@ public class MainClass implements Itest, iTest2{
 
 
 
-        classChecker.check(Printer.class, printer);
+        classChecker.check(HashMap.class, printer);
         printer.print();
         printer.clear();
 
@@ -47,7 +54,6 @@ public class MainClass implements Itest, iTest2{
             Class class1 = loader.findClass("MyClass");
             Object instanceOfClass1 = class1.newInstance();
 
-
             Method method1 = class1.getMethod("SetA", int.class);
             method1.invoke(instanceOfClass1, 1991);
 
@@ -60,6 +66,41 @@ public class MainClass implements Itest, iTest2{
 
             instanceOfClass2.Hello();
             instanceOfClass2.PrintStr("Job done");
+
+            //////////////////////////////////////////////////////////////////////
+            //interface + generic
+            Class class3 = loader.findClass("MyClassGeneric");
+            IMyGenericClass instanceOfClass3 = (IMyGenericClass) class3.newInstance();
+
+            instanceOfClass3.setA("sssss");
+            System.out.println( instanceOfClass3.getA());
+            instanceOfClass3.setA(26);
+            System.out.println( instanceOfClass3.getA());
+
+            //interface + reflection ( inner class? )
+
+
+            /*MyClassLoader loader2 = new MyClassLoader();//new instance loader
+
+            Class class4 = loader2.findClass("MyGenericMethosClass");
+            Object instanceOfClass4 = class4.newInstance();
+
+
+            Method [] methods = class4.getDeclaredMethods();
+            methods[0].setAccessible(true);
+            //Method method_1 = class4.getMethod("getA");
+            Type returnType = methods[0].getGenericReturnType();
+
+
+            ParameterizedType t = (ParameterizedType) class4.getGenericSuperclass(); // OtherClass<String>
+            Class<?> clazz = (Class<?>) t.getActualTypeArguments()[0]; // Class<String>
+
+
+
+            //List<> qqw = new List<clazz>();
+            //genObj = methods[0].invoke(instanceOfClass4);*/
+
+            System.out.println();
 
 
         } catch (Exception e) {

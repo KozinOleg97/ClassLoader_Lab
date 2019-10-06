@@ -13,16 +13,16 @@ public class ClassChecker {
 
     private void checkParentClasses (Class curClass, Printer printer){
 
-        printer.addtoStr(curClass.getName());
+        printer.addtoStrLn(curClass.getName());
 
 
 
         for (Field f: curClass.getDeclaredFields() ) {
-            printer.addtoStr(" (f)" + f.getName());
+            printer.addtoStrLn(" (f)" + f.getType() + " " + f.getName());
         }
 
         for (Method m: curClass.getDeclaredMethods()) {
-            printer.addtoStr(" (m)" + m.getName());
+            printer.addtoStrLn(" (m)" +  m.getName());
         }
 
 
