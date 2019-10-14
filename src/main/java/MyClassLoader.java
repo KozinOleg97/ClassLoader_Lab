@@ -2,6 +2,12 @@ import java.io.*;
 
 public class MyClassLoader extends ClassLoader{
 
+    /**
+     *
+     * @param name
+     * @return
+     * @throws ClassNotFoundException
+     */
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
         File filePath = new File( name+".class");

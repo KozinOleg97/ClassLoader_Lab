@@ -9,6 +9,9 @@ public class Printer implements IPrinter{
     private StringBuilder str;
     private StringBuilder tree;
 
+    /**
+     * Class for accumulating  output string & tree
+     */
     Printer() {
         str = new StringBuilder("");
         tree = new StringBuilder("");
@@ -36,6 +39,12 @@ public class Printer implements IPrinter{
     public void addtoStr(String inputStr) {
         str.append(inputStr + "   ");
     }
+
+    /**
+     * add elem to the tree
+     * @param inputStr
+     * @param lvl
+     */
     @MyAnnotation()
     public void addToTree(String inputStr, int lvl) {
 

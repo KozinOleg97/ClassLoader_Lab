@@ -29,6 +29,11 @@ public class JavaAssistProxyTest {
         classToMod.writeFile();
     }
 
+    /**
+     *
+     * @param allmethods
+     * @param ctClass
+     */
     void modifyMethods(CtMethod[] allmethods, CtClass ctClass) {
 
         try {
