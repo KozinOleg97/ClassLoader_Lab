@@ -6,27 +6,27 @@ public class ClassChecker {
     //private  Class curClass;
     //private Class[] curInterfaces;
 
-    public void check(Class curClass, Printer printer){
+    public void check(Class curClass, IPrinter printer){
         checkParentClasses(curClass, printer);
         checkParentInterfaces(curClass, printer, 0);
     }
 
-    private void checkParentClasses (Class curClass, Printer printer){
+    private void checkParentClasses (Class curClass, IPrinter printer){
 
-        printer.addtoStrLn(curClass.getName());
+        printer.addToStrLn(curClass.getName());
 
 
 
         for (Field f: curClass.getDeclaredFields() ) {
-            printer.addtoStrLn(" (f)" + f.getType() + " " + f.getName());
+            printer.addToStrLn(" (f)" + f.getType() + " " + f.getName());
         }
 
         for (Method m: curClass.getDeclaredMethods()) {
-            printer.addtoStrLn(" (m)" +  m.getName());
+            printer.addToStrLn(" (m)" +  m.getName());
         }
 
 
-        printer.addtoStrLn("");
+        printer.addToStrLn("");
 
         curClass = curClass.getSuperclass();
 
@@ -35,7 +35,7 @@ public class ClassChecker {
         }
     }
 
-    private void checkParentInterfaces(Class originClass, Printer printer, int lvl ){
+    private void checkParentInterfaces(Class originClass, IPrinter printer, int lvl ){
 
         Class [] curInterfaces = originClass.getInterfaces();
 

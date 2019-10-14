@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Printer {
+public class Printer implements IPrinter{
 
     private StringBuilder str;
     private StringBuilder tree;
@@ -24,8 +24,8 @@ public class Printer {
         str.setLength(0);
         tree.setLength(0);
     }
-
-    public void addtoStrLn(String inputStr) {
+    @MyAnnotation()
+    public void addToStrLn(String inputStr) {
         str.append(inputStr + "\n");
     }
 

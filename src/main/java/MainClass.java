@@ -1,15 +1,10 @@
-import java.awt.*;
-import java.lang.reflect.MalformedParameterizedTypeException;
 import java.lang.reflect.Method;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
+import java.lang.reflect.Proxy;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.SortedSet;
 
-public class MainClass implements Itest, iTest2{
+public class MainClass {
 
 
     public static void main(String[] args){
@@ -32,7 +27,14 @@ public class MainClass implements Itest, iTest2{
         }
         /////////////////////////////////////////////////////////////////////////////////
 
-        Printer printer = new Printer();
+        /////proxy with printer
+        Printer myPrinter = new Printer();
+        IPrinter printerProxy = (IPrinter) Proxy.newProxyInstance
+                        (Printer.class.getClassLoader(),
+                        Printer.class.getInterfaces(),
+                        new MyProxyHandler(myPrinter));
+
+        IPrinter printer = printerProxy;
 
         MainClass mainClass = new MainClass();
 
