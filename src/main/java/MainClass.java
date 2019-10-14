@@ -1,3 +1,7 @@
+import javassist.CannotCompileException;
+import javassist.NotFoundException;
+
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.Collections;
@@ -7,7 +11,7 @@ import java.util.Map;
 public class MainClass {
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws CannotCompileException, InstantiationException, NotFoundException, IllegalAccessException, NoSuchMethodException, IOException {
 
         ////////////////////////////Const MAP////////////////////////////////////////////
         final Map<String, String> map = new HashMap<String, String>(){{
@@ -25,9 +29,8 @@ public class MainClass {
         } catch (Exception e) {
             //e.printStackTrace();
         }
-        /////////////////////////////////////////////////////////////////////////////////
 
-        /////proxy with printer
+        //////////////////////proxy with printer////////////////////////////////////////////////////////////////
         Printer myPrinter = new Printer();
         IPrinter printerProxy = (IPrinter) Proxy.newProxyInstance
                         (Printer.class.getClassLoader(),
@@ -36,6 +39,8 @@ public class MainClass {
 
         IPrinter printer = printerProxy;
 
+
+        //////////////////ClassLoaders/////////////////////////////////////
         MainClass mainClass = new MainClass();
 
         ClassChecker classChecker = new ClassChecker();
@@ -108,6 +113,11 @@ public class MainClass {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
+
+        JavaAssistProxyTest assistProxyTest = new JavaAssistProxyTest();
+
 
 
 

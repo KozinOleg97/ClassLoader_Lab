@@ -1,0 +1,34 @@
+2019-10-14 21:07:34 INFO  ProxyPrinter:? -  $$, $args 
+2019-10-14 21:07:34 INFO  ProxyPrinter:34 -  $_, $r 
+2019-10-14 21:07:34 INFO  ProxyPrinter:? -  $$, $args 
+2019-10-14 21:07:34 INFO  ProxyPrinter:25 -  $_, $r 
+2019-10-14 21:12:04 INFO  ProxyPrinter:? -  $args 
+2019-10-14 21:12:04 INFO  ProxyPrinter:? -  $$ 
+2019-10-14 21:12:04 INFO  ProxyPrinter:34 -  $_, $r 
+2019-10-14 21:12:04 INFO  ProxyPrinter:? -  $args 
+2019-10-14 21:12:04 INFO  ProxyPrinter:? -  $$ 
+2019-10-14 21:12:04 INFO  ProxyPrinter:25 -  $_, $r 
+2019-10-14 21:13:38 INFO  ProxyPrinter:? -  $args 
+2019-10-14 21:13:38 INFO  ProxyPrinter:? -  $$ 
+2019-10-14 21:13:38 INFO  ProxyPrinter:34 -  $_, $r 
+2019-10-14 21:13:38 INFO  ProxyPrinter:? -  $args 
+2019-10-14 21:13:38 INFO  ProxyPrinter:? -  $$ 
+2019-10-14 21:13:38 INFO  ProxyPrinter:25 -  $_, $r 
+2019-10-14 21:33:49 INFO  ProxyPrinter:? -  $1 
+2019-10-14 21:33:49 INFO  ProxyPrinter:? -  $$ 
+2019-10-14 21:33:49 INFO  ProxyPrinter:34 -  $_, $r 
+2019-10-14 21:33:49 INFO  ProxyPrinter:? -  $1 
+2019-10-14 21:33:49 INFO  ProxyPrinter:? -  $$ 
+2019-10-14 21:33:49 INFO  ProxyPrinter:25 -  $_, $r 
+2019-10-14 21:37:27 INFO  ProxyPrinter:? -  $1 
+2019-10-14 21:37:27 INFO  ProxyPrinter:? -  $$ 
+2019-10-14 21:37:27 INFO  ProxyPrinter:34 -  $_, $r 
+2019-10-14 21:37:27 INFO  ProxyPrinter:? -  $1 
+2019-10-14 21:37:27 INFO  ProxyPrinter:? -  $$ 
+2019-10-14 21:37:27 INFO  ProxyPrinter:25 -  $_, $r 
+2019-10-14 21:38:04 INFO  ProxyPrinter:? -  $1 
+2019-10-14 21:38:04 INFO  ProxyPrinter:? -  $$ 
+2019-10-14 21:38:04 INFO  ProxyPrinter:34 -  $_, $r 
+2019-10-14 21:38:04 INFO  ProxyPrinter:? -  $1 
+2019-10-14 21:38:04 INFO  ProxyPrinter:? -  $$ 
+2019-10-14 21:38:04 INFO  ProxyPrinter:25 -  $_, $r 
