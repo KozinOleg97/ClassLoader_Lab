@@ -32,3 +32,31 @@
 2019-10-14 21:38:04 INFO  ProxyPrinter:? -  $1 
 2019-10-14 21:38:04 INFO  ProxyPrinter:? -  $$ 
 2019-10-14 21:38:04 INFO  ProxyPrinter:25 -  $_, $r 
+2019-10-18 22:21:45 INFO  ProxyPrinter:? -  $1 
+2019-10-18 22:21:45 INFO  ProxyPrinter:? -  $$ 
+2019-10-18 22:21:45 INFO  ProxyPrinter:37 -  $_, $r 
+2019-10-18 22:21:45 INFO  ProxyPrinter:? -  $1 
+2019-10-18 22:21:45 INFO  ProxyPrinter:? -  $$ 
+2019-10-18 22:21:45 INFO  ProxyPrinter:28 -  $_, $r 
+2019-10-18 22:22:24 INFO  ProxyPrinter:? -  $1 
+2019-10-18 22:22:24 INFO  ProxyPrinter:? -  $$ 
+2019-10-18 22:22:24 INFO  ProxyPrinter:37 -  $_, $r 
+2019-10-18 22:22:24 INFO  ProxyPrinter:? -  $1 
+2019-10-18 22:22:24 INFO  ProxyPrinter:? -  $$ 
+2019-10-18 22:22:24 INFO  ProxyPrinter:28 -  $_, $r 
+2019-10-18 22:22:37 INFO  ProxyPrinter:? -  $1 
+2019-10-18 22:22:37 INFO  ProxyPrinter:? -  $$ 
+2019-10-18 22:22:37 INFO  ProxyPrinter:37 -  $_, $r 
+2019-10-18 22:22:37 INFO  ProxyPrinter:? -  $1 
+2019-10-18 22:22:37 INFO  ProxyPrinter:? -  $$ 
+2019-10-18 22:22:37 INFO  ProxyPrinter:28 -  $_, $r 
+2019-10-18 22:25:03 INFO  ProxyPrinter:? -  $1 
+2019-10-18 22:25:03 INFO  ProxyPrinter:? -  $$ 
+2019-10-18 22:25:03 INFO  ProxyPrinter:37 -  $_, $r 
+2019-10-18 22:25:03 INFO  ProxyPrinter:? -  $1 
+2019-10-18 22:25:03 INFO  ProxyPrinter:? -  $$ 
+2019-10-18 22:25:03 INFO  ProxyPrinter:28 -  $_, $r 
+2019-10-18 23:18:28 INFO  :? - Method addToStrLn param: TestProxy 
+2019-10-18 23:18:28 INFO  :35 - Method addToStrLn returns: null
+2019-10-18 23:18:28 INFO  :? - Method print param: 
+2019-10-18 23:18:28 INFO  :26 - Method print returns: null

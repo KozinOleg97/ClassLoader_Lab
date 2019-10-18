@@ -1,4 +1,6 @@
-import com.sun.xml.internal.bind.v2.TODO;
+
+
+
 import javassist.*;
 
 import java.io.IOException;
@@ -11,8 +13,11 @@ public class JavaAssistProxyTest {
         System.out.println("-------------- JavaAssistProxyTest -------------");
 
         ClassPool pool = ClassPool.getDefault();
+        pool.importPackage("org.apache.log4j"); // don't work with get() methods
+
         CtClass classToMod = pool.get("Printer");
         classToMod.setName("ProxyPrinter");
+
 
         CtMethod[] allMethods = classToMod.getDeclaredMethods();
         modifyMethods(allMethods, classToMod);
@@ -30,25 +35,30 @@ public class JavaAssistProxyTest {
     }
 
     /**
-     *
      * @param allmethods
      * @param ctClass
      */
     void modifyMethods(CtMethod[] allmethods, CtClass ctClass) {
 
         try {
+
             for (CtMethod method : allmethods) {
                 if (method.hasAnnotation(MyAnnotation.class)) {
 
-                    //TODO params substitution ($)
 
-                    method.insertBefore("{" +
-                            "loger.info(\" $1 \");" +
-                            " loger.info(\" $$ \");}");
-                    method.insertAfter("{" +
-                            "loger.info(\" $_, $r \");" +
-                            "System.out.println(\"$1\");" +
-                            "}");
+                    method.insertBefore("{"
+                            + "org.apache.log4j.Logger logger =  org.apache.log4j.LogManager.getLogger(\"\"); "
+                            + "String param = \"Method " + method.getName() + " params: \";"
+                            + "for (int i = 0; i < $args.length; i++ )"
+                            + " param += $args[i] + \" \";"
+                            + "logger.info(param);"
+                            + "}");
+
+                    method.insertAfter("{"
+                            + "org.apache.log4j.Logger logger =  org.apache.log4j.LogManager.getLogger(\"\");"
+                            + "logger.info( \"Method " + method.getName() + " returns: \" + $_);"
+                            + "}");
+
 
                 }
             }

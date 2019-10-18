@@ -1,10 +1,8 @@
-import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
-import java.util.ArrayList;
+import java.util.logging.Logger;
 
 public class Printer implements IPrinter{
-
-    private  static final Logger loger =  Logger.getLogger(Printer.class);
 
     private StringBuilder str;
     private StringBuilder tree;
@@ -57,6 +55,7 @@ public class Printer implements IPrinter{
 
 
         tree.append(inputStr + "\n");
+
 
 
     }
