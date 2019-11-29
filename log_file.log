@@ -60,3 +60,11 @@
 2019-10-18 23:18:28 INFO  :35 - Method addToStrLn returns: null
 2019-10-18 23:18:28 INFO  :? - Method print param: 
 2019-10-18 23:18:28 INFO  :26 - Method print returns: null
+2019-11-29 01:09:56 INFO  :? - Method addToStrLn params: TestProxy 
+2019-11-29 01:09:56 INFO  :35 - Method addToStrLn returns: null
+2019-11-29 01:09:56 INFO  :? - Method print params: 
+2019-11-29 01:09:56 INFO  :26 - Method print returns: null
+2019-11-29 01:16:00 INFO  :? - Method addToStrLn params: TestProxy 
+2019-11-29 01:16:00 INFO  :35 - Method addToStrLn returns: null
+2019-11-29 01:16:00 INFO  :? - Method print params: 
+2019-11-29 01:16:00 INFO  :26 - Method print returns: null
