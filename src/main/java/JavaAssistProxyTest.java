@@ -8,15 +8,15 @@ import java.io.IOException;
 public class JavaAssistProxyTest {
 
 
-    public JavaAssistProxyTest() throws NotFoundException, CannotCompileException, IllegalAccessException, InstantiationException, NoSuchMethodException, IOException {
+    public JavaAssistProxyTest(String className) throws NotFoundException, CannotCompileException, IllegalAccessException, InstantiationException, NoSuchMethodException, IOException {
 
         System.out.println("-------------- JavaAssistProxyTest -------------");
 
         ClassPool pool = ClassPool.getDefault();
         pool.importPackage("org.apache.log4j"); // don't work with get() methods
 
-        CtClass classToMod = pool.get("Printer");
-        classToMod.setName("ProxyPrinter");
+        CtClass classToMod = pool.get(className);
+        classToMod.setName("Proxy");
 
 
         CtMethod[] allMethods = classToMod.getDeclaredMethods();
@@ -24,11 +24,11 @@ public class JavaAssistProxyTest {
 
 
         Class loadedClass = classToMod.toClass();
-        IPrinter loadedClassInst = (IPrinter) loadedClass.newInstance();
+        ITest loadedClassInst = (ITest) loadedClass.newInstance();
 
 
-        loadedClassInst.addToStrLn("TestProxy");
-        loadedClassInst.print();
+        loadedClassInst.set(420);
+        System.out.printf(String.valueOf(loadedClassInst.get()));
 
 
         classToMod.writeFile();

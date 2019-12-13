@@ -2,6 +2,7 @@ import javassist.CannotCompileException;
 import javassist.NotFoundException;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.Collections;
@@ -13,35 +14,37 @@ public class MainClass {
 
     public static void main(String[] args) throws CannotCompileException, InstantiationException, NotFoundException, IllegalAccessException, NoSuchMethodException, IOException {
 
-        ////////////////////////////Const MAP////////////////////////////////////////////
-        final Map<String, String> map = new HashMap<String, String>(){{
-            put("Key_1", "Value_1");
-            put("Key_2", "Value_2");
-            put("Key_3", "Value_1");
-        }};
 
-        map.put("d","d");
 
-        final Map constMap = Collections.unmodifiableMap(map);
 
+
+        JavaAssistLab javaAssistLab = new JavaAssistLab();
+        javaAssistLab.doLab();
+
+        ClassLoaderLab classLoaderLab = new ClassLoaderLab();
         try {
-            constMap.put("d", "d");
+            classLoaderLab.doReflect(228);
+            classLoaderLab.doInterface("ClassForTest");
+
+
         } catch (Exception e) {
-            //e.printStackTrace();
+            e.printStackTrace();
         }
 
+
+
         //////////////////////proxy with printer////////////////////////////////////////////////////////////////
-        Printer myPrinter = new Printer();
+        /*Printer myPrinter = new Printer();
         IPrinter printerProxy = (IPrinter) Proxy.newProxyInstance
                         (Printer.class.getClassLoader(),
                         Printer.class.getInterfaces(),
                         new MyProxyHandler(myPrinter));
 
-        IPrinter printer = printerProxy;
+        IPrinter printer = printerProxy;*/
 
 
         //////////////////ClassLoaders/////////////////////////////////////
-        MainClass mainClass = new MainClass();
+        /*MainClass mainClass = new MainClass();
 
         ClassChecker classChecker = new ClassChecker();
 
@@ -49,11 +52,11 @@ public class MainClass {
 
         classChecker.check(HashMap.class, printer);
         printer.print();
-        printer.clear();
+        printer.clear();*/
 
 
 
-        MyClassLoader loader = new MyClassLoader();
+       /* MyClassLoader loader = new MyClassLoader();
 
         try {
 
@@ -72,17 +75,17 @@ public class MainClass {
             IMyClass2 instanceOfClass2 = (IMyClass2) class2.newInstance();
 
             instanceOfClass2.Hello();
-            instanceOfClass2.PrintStr("Job done");
+            instanceOfClass2.PrintStr("Job done");*/
 
             //////////////////////////////////////////////////////////////////////
             //interface + generic
-            Class class3 = loader.findClass("MyClassGeneric");
+            /*Class class3 = loader.findClass("MyClassGeneric");
             IMyGenericClass instanceOfClass3 = (IMyGenericClass) class3.newInstance();
 
             instanceOfClass3.setA("sssss");
             System.out.println( instanceOfClass3.getA());
             instanceOfClass3.setA(26);
-            System.out.println( instanceOfClass3.getA());
+            System.out.println( instanceOfClass3.getA());*/
 
             //interface + reflection ( inner class? )
 
@@ -107,21 +110,22 @@ public class MainClass {
             //List<> qqw = new List<clazz>();
             //genObj = methods[0].invoke(instanceOfClass4);*/
 
-            System.out.println();
+      /*      System.out.println();
 
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+*/
 
 
 
-        JavaAssistProxyTest assistProxyTest = new JavaAssistProxyTest();
 
 
 
 
     }
+
 
 
 }

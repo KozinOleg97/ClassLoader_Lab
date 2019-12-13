@@ -68,3 +68,79 @@
 2019-11-29 01:16:00 INFO  :35 - Method addToStrLn returns: null
 2019-11-29 01:16:00 INFO  :? - Method print params: 
 2019-11-29 01:16:00 INFO  :26 - Method print returns: null
+2019-11-29 13:04:18 INFO  :? - Method addToStrLn params: TestProxy 
+2019-11-29 13:04:18 INFO  :35 - Method addToStrLn returns: null
+2019-11-29 13:04:18 INFO  :? - Method print params: 
+2019-11-29 13:04:18 INFO  :26 - Method print returns: null
+2019-12-13 12:47:42 INFO  :? - Method set params: 420 
+2019-12-13 12:47:42 INFO  :15 - Method set returns: null
+2019-12-13 12:47:43 INFO  :? - Method get params: 
+2019-12-13 12:47:43 INFO  :9 - Method get returns: 420
+2019-12-13 12:55:04 INFO  :? - Method set params: 420 
+2019-12-13 12:55:04 INFO  :15 - Method set returns: null
+2019-12-13 12:55:04 INFO  :? - Method get params: 
+2019-12-13 12:55:04 INFO  :9 - Method get returns: 420
+2019-12-13 12:55:50 INFO  :? - Method set params: 420 
+2019-12-13 12:55:50 INFO  :15 - Method set returns: null
+2019-12-13 12:55:50 INFO  :? - Method get params: 
+2019-12-13 12:55:50 INFO  :9 - Method get returns: 420
+2019-12-13 12:57:26 INFO  :? - Method set params: 420 
+2019-12-13 12:57:26 INFO  :15 - Method set returns: null
+2019-12-13 12:57:26 INFO  :? - Method get params: 
+2019-12-13 12:57:26 INFO  :9 - Method get returns: 420
+2019-12-13 12:58:14 INFO  :? - Method set params: 420 
+2019-12-13 12:58:14 INFO  :15 - Method set returns: null
+2019-12-13 12:58:14 INFO  :? - Method get params: 
+2019-12-13 12:58:14 INFO  :9 - Method get returns: 420
+2019-12-13 12:59:30 INFO  :? - Method set params: 420 
+2019-12-13 12:59:30 INFO  :15 - Method set returns: null
+2019-12-13 12:59:30 INFO  :? - Method get params: 
+2019-12-13 12:59:30 INFO  :9 - Method get returns: 420
+2019-12-13 12:59:45 INFO  :? - Method set params: 420 
+2019-12-13 12:59:45 INFO  :15 - Method set returns: null
+2019-12-13 12:59:45 INFO  :? - Method get params: 
+2019-12-13 12:59:45 INFO  :9 - Method get returns: 420
+2019-12-13 13:00:12 INFO  :? - Method set params: 420 
+2019-12-13 13:00:12 INFO  :15 - Method set returns: null
+2019-12-13 13:00:12 INFO  :? - Method get params: 
+2019-12-13 13:00:12 INFO  :9 - Method get returns: 420
+2019-12-13 13:03:16 INFO  :? - Method set params: 420 
+2019-12-13 13:03:16 INFO  :15 - Method set returns: null
+2019-12-13 13:03:16 INFO  :? - Method get params: 
+2019-12-13 13:03:16 INFO  :9 - Method get returns: 420
+2019-12-13 13:30:33 INFO  :? - Method set params: 420 
+2019-12-13 13:30:33 INFO  :15 - Method set returns: null
+2019-12-13 13:30:33 INFO  :? - Method get params: 
+2019-12-13 13:30:33 INFO  :9 - Method get returns: 420
+2019-12-13 13:32:52 INFO  :? - Method set params: 420 
+2019-12-13 13:32:52 INFO  :15 - Method set returns: null
+2019-12-13 13:32:52 INFO  :? - Method get params: 
+2019-12-13 13:32:52 INFO  :9 - Method get returns: 420
+2019-12-13 13:33:27 INFO  :? - Method set params: 420 
+2019-12-13 13:33:27 INFO  :15 - Method set returns: null
+2019-12-13 13:33:27 INFO  :? - Method get params: 
+2019-12-13 13:33:27 INFO  :9 - Method get returns: 420
+2019-12-13 13:39:19 INFO  :? - Method set params: 420 
+2019-12-13 13:39:19 INFO  :15 - Method set returns: null
+2019-12-13 13:39:19 INFO  :? - Method get params: 
+2019-12-13 13:39:19 INFO  :9 - Method get returns: 420
+2019-12-13 13:40:12 INFO  :? - Method set params: 420 
+2019-12-13 13:40:12 INFO  :15 - Method set returns: null
+2019-12-13 13:40:12 INFO  :? - Method get params: 
+2019-12-13 13:40:12 INFO  :9 - Method get returns: 420
+2019-12-13 13:40:38 INFO  :? - Method set params: 420 
+2019-12-13 13:40:38 INFO  :15 - Method set returns: null
+2019-12-13 13:40:38 INFO  :? - Method get params: 
+2019-12-13 13:40:38 INFO  :9 - Method get returns: 420
+2019-12-13 13:40:47 INFO  :? - Method set params: 420 
+2019-12-13 13:40:47 INFO  :15 - Method set returns: null
+2019-12-13 13:40:47 INFO  :? - Method get params: 
+2019-12-13 13:40:47 INFO  :9 - Method get returns: 420
+2019-12-13 13:48:06 INFO  :? - Method set params: 420 
+2019-12-13 13:48:06 INFO  :15 - Method set returns: null
+2019-12-13 13:48:06 INFO  :? - Method get params: 
+2019-12-13 13:48:06 INFO  :9 - Method get returns: 420
+2019-12-13 13:51:36 INFO  :? - Method set params: 420 
+2019-12-13 13:51:36 INFO  :15 - Method set returns: null
+2019-12-13 13:51:36 INFO  :? - Method get params: 
+2019-12-13 13:51:36 INFO  :9 - Method get returns: 420
