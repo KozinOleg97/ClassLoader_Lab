@@ -10,7 +10,7 @@ public class MyClassLoader extends ClassLoader{
      */
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
-        File filePath = new File( name+".class");
+        File filePath = new File(name+".class");
 
         try {
 

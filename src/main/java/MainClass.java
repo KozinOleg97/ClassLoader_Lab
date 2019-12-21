@@ -1,5 +1,6 @@
 import javassist.CannotCompileException;
 import javassist.NotFoundException;
+import sun.awt.SunHints;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -14,17 +15,14 @@ public class MainClass {
 
     public static void main(String[] args) throws CannotCompileException, InstantiationException, NotFoundException, IllegalAccessException, NoSuchMethodException, IOException {
 
-
-
-
-
-        JavaAssistLab javaAssistLab = new JavaAssistLab();
-        javaAssistLab.doLab();
+        ClassChecker checker = new ClassChecker();
 
         ClassLoaderLab classLoaderLab = new ClassLoaderLab();
         try {
-            classLoaderLab.doReflect(228);
-            classLoaderLab.doInterface("ClassForTest");
+            System.out.println(checker.check(classLoaderLab.doReflect(228)));
+            System.out.println("\n");
+            System.out.println(checker.check(classLoaderLab.doInterface()));
+            System.out.println("\n");
 
 
         } catch (Exception e) {
@@ -32,62 +30,23 @@ public class MainClass {
         }
 
 
-
-        //////////////////////proxy with printer////////////////////////////////////////////////////////////////
-        /*Printer myPrinter = new Printer();
-        IPrinter printerProxy = (IPrinter) Proxy.newProxyInstance
-                        (Printer.class.getClassLoader(),
-                        Printer.class.getInterfaces(),
-                        new MyProxyHandler(myPrinter));
-
-        IPrinter printer = printerProxy;*/
+        JavaAssistProxyTest javaAssistLab = new JavaAssistProxyTest();
+        System.out.println(checker.check(javaAssistLab.doLab("ClassForTest", 100500)));
 
 
-        //////////////////ClassLoaders/////////////////////////////////////
-        /*MainClass mainClass = new MainClass();
-
-        ClassChecker classChecker = new ClassChecker();
-
-
-
-        classChecker.check(HashMap.class, printer);
-        printer.print();
-        printer.clear();*/
-
-
-
-       /* MyClassLoader loader = new MyClassLoader();
-
+        ClassLoaderGenericLab genericLab = new ClassLoaderGenericLab();
         try {
+            System.out.println(checker.check(genericLab.doLabInterface("This is string", 8800)));
 
-            //reflection
-            Class class1 = loader.findClass("MyClass");
-            Object instanceOfClass1 = class1.newInstance();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
-            Method method1 = class1.getMethod("SetA", int.class);
-            method1.invoke(instanceOfClass1, 1991);
 
-            Method method2 = class1.getMethod("PrintA");
-            method2.invoke(instanceOfClass1);
 
-            //interface
-            Class class2 = loader.findClass("MyClass2");
-            IMyClass2 instanceOfClass2 = (IMyClass2) class2.newInstance();
 
-            instanceOfClass2.Hello();
-            instanceOfClass2.PrintStr("Job done");*/
 
-            //////////////////////////////////////////////////////////////////////
-            //interface + generic
-            /*Class class3 = loader.findClass("MyClassGeneric");
-            IMyGenericClass instanceOfClass3 = (IMyGenericClass) class3.newInstance();
-
-            instanceOfClass3.setA("sssss");
-            System.out.println( instanceOfClass3.getA());
-            instanceOfClass3.setA(26);
-            System.out.println( instanceOfClass3.getA());*/
-
-            //interface + reflection ( inner class? )
+        //interface + reflection
 
 
             /*MyClassLoader loader2 = new MyClassLoader();//new instance loader
@@ -119,13 +78,7 @@ public class MainClass {
 */
 
 
-
-
-
-
-
     }
-
 
 
 }

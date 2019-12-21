@@ -6,28 +6,29 @@ import java.lang.reflect.Method;
 
 public class ClassLoaderLab {
 
-    void doReflect(int value) throws ClassNotFoundException, IllegalAccessException, InstantiationException, InvocationTargetException, NoSuchMethodException {
+    Class doReflect(int value) throws ClassNotFoundException, IllegalAccessException, InstantiationException, InvocationTargetException, NoSuchMethodException {
 
         System.out.println();
         System.out.println("----------------ClassLoader reflection---------------");
 
 
-
         MyClassLoader loader = new MyClassLoader();
 
-        Class class1 = loader.findClass("MyClass");
-        Object instanceOfClass1 = class1.newInstance();
+        Class myClass = loader.findClass("MyClass");
+        Object instanceOfClass1 = myClass.newInstance();
 
-        System.out.println("Loaded: " + class1.getName());
+        System.out.println("Loaded: " + myClass.getName());
 
-        Method method1 = class1.getMethod("SetA", int.class);
+        Method method1 = myClass.getMethod("SetA", int.class);
         method1.invoke(instanceOfClass1, value);
 
-        Method method2 = class1.getMethod("PrintA");
+        Method method2 = myClass.getMethod("PrintA");
         method2.invoke(instanceOfClass1);
+
+        return myClass;
     }
 
-    void doInterface(String className) throws ClassNotFoundException, IllegalAccessException, InstantiationException, IOException {
+    Class doInterface() throws ClassNotFoundException, IllegalAccessException, InstantiationException, IOException {
 
         System.out.println();
         System.out.println("----------------ClassLoader reflection---------------");
@@ -35,19 +36,18 @@ public class ClassLoaderLab {
         MyClassLoader loader = new MyClassLoader();
 
 
-        Class class2 = loader.findClass("MyClass2");
-        IMyClass2 instanceOfClass2 = (IMyClass2) class2.newInstance();
+        Class myClass = loader.findClass("MyClass2");
+        IMyClass2 instanceOfClass2 = (IMyClass2) myClass.newInstance();
 
 
-        System.out.println("Loaded: " + class2.getName());
-
+        System.out.println("Loaded: " + myClass.getName());
 
 
         instanceOfClass2.Hello();
         instanceOfClass2.PrintStr("Job done");
+
+        return myClass;
     }
-
-
 
 
 }

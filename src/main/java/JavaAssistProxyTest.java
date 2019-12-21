@@ -8,7 +8,8 @@ import java.io.IOException;
 public class JavaAssistProxyTest {
 
 
-    public JavaAssistProxyTest(String className) throws NotFoundException, CannotCompileException, IllegalAccessException, InstantiationException, NoSuchMethodException, IOException {
+
+    public  Class doLab(String className, Integer value) throws NotFoundException, CannotCompileException, IllegalAccessException, InstantiationException, NoSuchMethodException, IOException {
 
         System.out.println("-------------- JavaAssistProxyTest -------------");
 
@@ -27,11 +28,14 @@ public class JavaAssistProxyTest {
         ITest loadedClassInst = (ITest) loadedClass.newInstance();
 
 
-        loadedClassInst.set(420);
+        loadedClassInst.set(value);
         System.out.printf(String.valueOf(loadedClassInst.get()));
+        System.out.println("\n");
 
 
         classToMod.writeFile();
+
+        return loadedClass;
     }
 
     /**
