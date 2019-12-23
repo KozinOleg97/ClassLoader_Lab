@@ -15,6 +15,7 @@ public class JavaAssistProxyTest {
 
         ClassPool pool = ClassPool.getDefault();
         pool.importPackage("org.apache.log4j"); // don't work with get() methods
+        //pool.importPackage( "java.lang.reflect.*");
 
         CtClass classToMod = pool.get(className);
         classToMod.setName("Proxy");
@@ -52,7 +53,7 @@ public class JavaAssistProxyTest {
 
                     method.insertBefore("{"
                             + "org.apache.log4j.Logger logger =  org.apache.log4j.LogManager.getLogger(\"\"); "
-                            + "String param = \"Method " + method.getName() + " params: \";"
+                            + "String param = \"Method '" + method.getName() + "' params: \";"
                             + "for (int i = 0; i < $args.length; i++ )"
                             + " param += $args[i] + \" \";"
                             + "logger.info(param);"
@@ -60,7 +61,7 @@ public class JavaAssistProxyTest {
 
                     method.insertAfter("{"
                             + "org.apache.log4j.Logger logger =  org.apache.log4j.LogManager.getLogger(\"\");"
-                            + "logger.info( \"Method " + method.getName() + " returns: \" + $_);"
+                            + "logger.info( \"Method '" + method.getName() + "' returns: \" + $_);"
                             + "}");
 
 

@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -44,6 +45,18 @@ public class MainClass {
 
 
 
+
+    Class2 class2 = new Class2();
+        Integer[] mas = {1,2,3,4,5,6};
+        Integer var = 5;
+        ArrayList<Integer> list = new ArrayList<>();
+        Integer res = class2.qwe(mas, list, var);
+
+        String[] mas2 = {"1", "2", "www"};
+        String var2 = "str";
+        ArrayList<String> list2 = new ArrayList<>();
+        class2.qwe(mas2, list2, var2);
+        String res2 = class2.qwe(mas2, list2, var2);
 
 
         //interface + reflection

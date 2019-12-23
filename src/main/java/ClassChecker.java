@@ -108,15 +108,15 @@ public class ClassChecker {
         StringBuilder sb = new StringBuilder();
         sb.append(depth + " ------------------------------------------------------------- \n");
         sb.append(depth);
-        ClassLoader cl = name.getClassLoader();
+        ClassLoader loader = name.getClassLoader();
         sb.append(getAnnotations(name.getAnnotations(), depth));
         sb.append("<L| Class name:  ").append(name.getName());
         sb.append("     Class loader name:  ");
-        if (cl != null) {
-            sb.append(getAnnotations(cl.getClass().getAnnotations(), depth));
-            sb.append(cl.getClass().getName());
+        if (loader != null) {
+            sb.append(getAnnotations(loader.getClass().getAnnotations(), depth));
+            sb.append(loader.getClass().getName());
         } else {
-            sb.append("none");
+            sb.append("The default system class was used.");
         }
         sb.append("\n");
         return sb;
@@ -150,8 +150,8 @@ public class ClassChecker {
         if (tempType.length > 0) {
             sb.append("         Generic type:   ");
         }
-        for (Type tp : tempType) {
-            sb.append(tp.toString().replaceAll("java.lang.", "")).append(";" + DEPTH_CHARACTER);
+        for (Type type : tempType) {
+            sb.append(type.toString().replaceAll("java.lang.", "")).append(";" + DEPTH_CHARACTER);
         }
         sb.append("\n");
 
@@ -172,11 +172,11 @@ public class ClassChecker {
         return sb;
     }
 
-    private StringBuilder getAnnotations(Annotation[] at, StringBuilder depth) {
+    private StringBuilder getAnnotations(Annotation[] allAnnotations, StringBuilder depth) {
         StringBuilder sb = new StringBuilder();
-        for (Annotation an : at) {
+        for (Annotation annotation : allAnnotations) {
             sb.append(depth).append(DEPTH_CHARACTER);
-            sb.append(an.toString()).append("\n");
+            sb.append(annotation.toString()).append("\n");
         }
         return sb;
     }
